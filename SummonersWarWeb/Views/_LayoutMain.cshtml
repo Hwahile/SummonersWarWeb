@@ -1,0 +1,24 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>swswsw!!</title>
+
+    @Styles.Render("~/Content")
+    <link rel="stylesheet/less" type="text/css" href="~/Content/Main.less" />
+    @Scripts.Render("~/Scripts")
+
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#" >Tab1</a></li>
+        <li role="presentation"><a href="#">Tab2</a></li>
+        <li role="presentation" class="disabled"><a href="#">Tab3</a></li>
+    </ul>
+    <div class="content">
+        @RenderBody()
+    </div>
+</body>
+</html>

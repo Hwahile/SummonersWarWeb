@@ -1,0 +1,121 @@
+﻿{
+  "item_list": [
+    {
+      "item_master_type": 11,
+      "item_quantity": 37,
+      "item_master_id": 13003,
+      "wizard_id": 152209
+    },
+    {
+      "item_master_type": 9,
+      "item_quantity": 63,
+      "item_master_id": 9,
+      "wizard_id": 152209
+    },
+    {
+      "item_master_type": 11,
+      "item_quantity": 14,
+      "item_master_id": 12006,
+      "wizard_id": 152209
+    },
+    {
+      "item_master_type": 11,
+      "item_quantity": 439,
+      "item_master_id": 11001,
+      "wizard_id": 152209
+    }
+  ],
+  "my_worldboss_best_ranking": {
+    "rating_id": 3003,
+    "ranking": 11635,
+    "ranking_rate": 9,
+    "accumulate_damage": 12238817
+  },
+  "wizard_info": {
+    "arena_energy_next_gain": 0,
+    "wizard_level": 50,
+    "darkportal_energy": 9,
+    "unit_depository_slots": {
+      "upgrade": {
+        "mana": 120000,
+        "number": 260,
+        "crystal": 30
+      },
+      "number": 255
+    },
+    "energy_per_min": 0.26,
+    "costume_point": 67,
+    "social_point_max": 3000,
+    "next_energy_gain": 183,
+    "unit_slots": { "number": 100 },
+    "wizard_energy": 89,
+    "wizard_last_login": "2017-04-15 00:42:37",
+    "mail_box_event": 0,
+    "arena_energy": 15,
+    "social_point_current": 2300,
+    "arena_energy_max": 10,
+    "wizard_id": 152209,
+    "honor_point": 240,
+    "wizard_name": "CL4P-TP*",
+    "darkportal_energy_max": 10,
+    "rep_assigned": 1,
+    "rep_unit_id": 1103697658,
+    "wizard_mana": 3904441,
+    "pvp_event": 0,
+    "energy_max": 90,
+    "experience": 3800000,
+    "honor_medal": 39,
+    "wizard_crystal": 873,
+    "guild_point": 341,
+    "costume_point_max": 9999
+  },
+  "worldboss_status": {
+    "status": 2,
+    "close_time": "2017-04-16 08:30:00",
+    "base_hp": 0,
+    "open_time": "2017-04-09 20:45:00",
+    "daily_battle_init_remained_time": 22279,
+    "open_remained_time": 0,
+    "battle_start_time": "2017-04-10 01:45:00",
+    "battle_end_time": "2017-04-16 07:30:00",
+    "worldboss_id": 10083,
+    "dead_remained_time": 110479,
+    "hp_rate": 22.749483585919,
+    "close_remained_time": 114079,
+    "refresh_term": 300,
+    "region_id": 9
+  },
+  "ts_val": 1155525073,
+  "ret_code": 0,
+  "tzone": "Europe/Berlin",
+  "my_worldboss_daily_battle_count": 1,
+  "tvalue": 1492184921,
+  "tvaluelocal": 1492159721,
+  "command": "BattleWorldBossResult",
+  "worldboss_used_unit": [ 1083618417, 1988127663, 817043025, 1103697658, 7385400, 1368613191, 7385359, 7385398, 3680638458, 7385365, 3381331494, 3485315480, 2120228164, 7385345, 917028618, 1991122734, 3089452959, 1988137611, 7385366, 1988126637 ],
+  "my_worldboss_ranking": {
+    "rating_id": 2003,
+    "ranking": 44767,
+    "ranking_rate": 23,
+    "is_reward": 0,
+    "accumulate_damage": 10591953
+  },
+  "my_worldboss_prev_ranking": {
+    "rating_id": 3002,
+    "ranking": 28996,
+    "ranking_rate": 15,
+    "accumulate_damage": 13599641
+  },
+  "reward": {
+    "crate": {
+      "material": {
+        "item_quantity": 1,
+        "item_master_id": 11001
+      },
+      "random_scroll": {
+        "item_quantity": 5,
+        "item_master_id": 9
+      }
+    }
+  }
+}

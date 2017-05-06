@@ -1,0 +1,116 @@
+﻿@{
+    Layout = "~/Views/_LayoutMain.cshtml";
+}
+
+@if (ViewData.Keys.Contains("Test"))
+{
+    <script>console.log(@Html.Raw(ViewData["Test"]))</script>
+}
+@if (ViewData.Keys.Contains("Trottel"))
+{
+    <text>hehe, trottel.</text>
+    ViewData["Trottel"].ToString();
+}
+@if (ViewData.Keys.Contains("Maindata"))
+{
+    SummonersWarWeb.Classes.MainData.MainData test = ViewData["Maindata"] as SummonersWarWeb.Classes.MainData.MainData;
+    <table class="table table-striped display"  id="testtable" >
+        <thead>
+            <tr>
+                <th data-orderable="false"></th>
+                <th>Name</th>
+                <th>Attribute</th>
+                <th>Level</th>
+                <th>Stars</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (SummonersWarWeb.Classes.MainData.Monster item in test.MonsterListe)
+            {
+                <tr data-stat-atk="@item.BaseAtk" data-stat-hp="@(item.BaseHp * 15)" data-stat-def="@item.BaseDef" data-stat-spd="@item.BaseSpd" data-stat-cr="@item.BaseCR" data-stat-cd="@item.BaseCD" data-stat-res="@item.BaseRes" data-stat-acc="@item.BaseAcc">
+                    <td class="moreDetails"><i class="glyphicon glyphicon-plus-sign"></i></td>
+                    <td>@item.Name</td>
+                    <td>@item.Attribute</td>
+                    <td>@item.Level</td>
+                    <td>@item.Stars <i class="glyphicon glyphicon-star"></i></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script>
+        function format(d) {
+            return '<table class="dataSubTable">' +
+                '<tr>' +
+                    '<td class="subTitle">HP:</td>' +
+                    '<td class="subVal">' + d.statHp + '</td>' +
+                    '<td class="subSpace"></td>' +
+                    '<td class="subTitle">CRI Rate:</td>' +
+                    '<td class="subVal">' + d.statCr + '%</td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td class="subTitle">ATK:</td>' +
+                    '<td class="subVal">' + d.statAtk + '</td>' +
+                    '<td class="subSpace"></td>' +
+                    '<td class="subTitle">CRI Dmg:</td>' +
+                    '<td class="subVal">' + d.statCd + '%</td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td class="subTitle">DEF:</td>' +
+                    '<td class="subVal">' + d.statDef + '</td>' +
+                    '<td class="subSpace"></td>' +
+                    '<td class="subTitle">Resistance:</td>' +
+                    '<td class="subVal">' + d.statRes + '%</td>' +
+                '</tr>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td class="subTitle">SPD:</td>' +
+                    '<td class="subVal">' + d.statSpd + '</td>' +
+                    '<td class="subSpace"></td>' +
+                    '<td class="subTitle">Accuracy:</td>' +
+                    '<td class="subVal">' + d.statAcc + '%</td>' +
+                '</tr>' +
+            '</table>';
+        }
+        $(document).ready(function () {
+            var dt = $('#testtable').DataTable({
+                "pageLength": 25,
+                "scrollY": "50vh",
+                "scrollCollapse": true,
+                //"paging": false,
+                //"info": false,
+                //"pagingType": "full_numbers",
+                //"drawCallback": function( settings ) {
+                //    console.log( 'DataTables has redrawn the table' );
+                //},
+                //stateSave: true,
+                //"lengthMenu": [[10, 20, 50, -1], [10, 20, 50, "All"]],
+                "order": [[4, "desc"]]
+                //"language": {
+                //    "lengthMenu": "Show _MENU_ monsters per page",
+                //    "zeroRecords": "Nothing found - sorry",
+                //    "info": "Showing page _PAGE_ of _PAGES_",
+                //    "infoEmpty": "No records available",
+                //    "infoFiltered": "(filtered from _MAX_ total records)",
+                //    "decimal": ",",
+                //    "thousands": "."
+                //}
+            });
+            $('#testtable').removeAttr("style");
+            $('#testtable tbody').on('click', 'td.moreDetails', function () {
+                var tr = $(this).closest('tr');
+                var row = dt.row(tr);
+
+                if (row.child.isShown()) {
+                    row.child.hide();
+                    $(this).html('<i class="glyphicon glyphicon-plus-sign"></i>');
+                    tr.removeClass('shown');
+                }
+                else {
+                    row.child(format(tr.data())).show();
+                    $(this).html('<i class="glyphicon glyphicon-minus-sign"></i>');
+                    tr.addClass('shown');
+                }
+            });
+        });
+    </script>
+}
